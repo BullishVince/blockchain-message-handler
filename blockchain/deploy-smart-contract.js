@@ -20,7 +20,12 @@ const input = {
     }
   }
 }; 
-const output = JSON.parse(solc.compile(JSON.stringify(input)));
+const compilationOutput = solc.compile(JSON.stringify(input));
+
+//Save the compiled output to bin, which can later be used as interface when communicating against the smart contract
+fs.writeFileSync('blockchain/bin/compilation-output', compilationOutput, 'utf-8')
+
+const output = JSON.parse(compilationOutput);
 console.log(output); // Log output from compiler
 
 //Set up a provider
@@ -58,6 +63,9 @@ const deployAndRunContract = async () => {
   .on('confirmation', async (confNumber, receipt) => {
     const { contractAddress } = receipt
     console.log("Deployed at", contractAddress);
+
+    //Save the contract address in bin
+    fs.writeFileSync('blockchain/bin/contract-address', contractAddress, 'utf-8')
 
     // Get the deployed contract instance:
     const contractInstance = new web3.eth.Contract(abi, contractAddress)
