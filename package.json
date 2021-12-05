@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "ganache": "ganache-cli --accounts 20",
-    "api": "node api/app.js"
+    "api": "node api/app.js",
+    "blockchain-deploy": "node blockchain/deploy-smart-contract.js"
   },
   "repository": {
     "type": "git",
