@@ -1,0 +1,25 @@
+{
+  "name": "blockchain-message-handler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ganache": "ganache-cli --accounts 20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BullishVince/blockchain-message-handler.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BullishVince/blockchain-message-handler/issues"
+  },
+  "homepage": "https://github.com/BullishVince/blockchain-message-handler#readme",
+  "dependencies": {
+    "ganache-cli": "^6.12.2",
+    "solc": "^0.8.10",
+    "web3": "^1.6.1"
+  }
+}
